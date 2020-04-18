@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "好好汽配",
+  "usingComponents": {
+    "tap-bar": "/pages/components/tapBar",
+    "home": "/pages/index/index",
+    "class-com": "/pages/class/index",
+    "scan": "/pages/scan/index",
+    "cart": "/pages/cart/index",
+    "mine": "/pages/mine/index"
+  }
+}

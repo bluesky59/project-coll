@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/other/main",
+    "pages/index/index",
+    "pages/class/index",
+    "pages/class/sale",
+    "pages/scan/index",
+    "pages/scan/his",
+    "pages/cart/index",
+    "pages/cart/order-confirm",
+    "pages/cart/pay-order",
+    "pages/mine/index",
+    "pages/mine/remaining",
+    "pages/mine/remaining-detail",
+    "pages/mine/invite",
+    "pages/mine/notice",
+    "pages/mine/coupons",
+    "pages/mine/to-take",
+    "pages/mine/coupons-list",
+    "pages/mine/address",
+    "pages/mine/new-goods",
+    "pages/mine/new-goods-add",
+    "pages/mine/after-sales",
+    "pages/scan/vin-input",
+    "pages/other/good-detail",
+    "pages/mine/all-orders",
+    "pages/other/veh-detail",
+    "pages/scan/scan-scan",
+    "pages/scan/scan-img"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "好好汽配",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F7F7F7"
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,173 @@
+{
+	"pages": [
+		{
+			"path": "pages/other/main",
+			"style": {
+				"navigationBarTitleText": "好好汽配"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "好好汽配"
+			}
+		},
+		{
+			"path": "pages/class/index",
+			"style": {
+				"navigationBarTitleText": "全部商品"
+			}
+		},
+		{
+		    "path" : "pages/class/sale",
+		    "style" : {
+				"navigationBarTitleText": "特惠活动"
+			}
+		},
+		{
+			"path": "pages/scan/index",
+			"style": {
+				"navigationBarTitleText": "扫描VIN码"
+			}
+		},
+		{
+		    "path" : "pages/scan/his",
+		    "style" : {
+				"navigationBarTitleText": "VIN码查询历史"
+			}
+		},
+		{
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+		    "path" : "pages/cart/order-confirm",
+		    "style" : {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
+		{
+		    "path" : "pages/cart/pay-order",
+		    "style" : {
+				"navigationBarTitleText": "支付订单"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/mine/remaining",
+			"style": {
+				"navigationBarTitleText": "账户余额"
+			}
+		},
+		{
+			"path": "pages/mine/remaining-detail",
+			"style": {
+				"navigationBarTitleText": "余额"
+			}
+		},
+		{
+            "path" : "pages/mine/invite",
+            "style": {
+            	"navigationBarTitleText": "邀请注册"
+            }
+        },
+		{
+            "path" : "pages/mine/notice",
+            "style": {
+            	"navigationBarTitleText": "系统公告"
+            }
+        },
+		{
+		    "path" : "pages/mine/coupons",
+		    "style": {
+		    	"navigationBarTitleText": "领券中心"
+		    }
+		}
+        ,{
+            "path" : "pages/mine/to-take",
+            "style": {
+            	"navigationBarTitleText": "待收货详情"
+            }
+        },
+		{
+            "path" : "pages/mine/coupons-list",
+            "style" : {
+				"navigationBarTitleText": "优惠券列表"
+			}
+        },
+		{
+            "path" : "pages/mine/address",
+            "style" : {
+				"navigationBarTitleText": "新增收货地址"
+			}
+        }
+        ,{
+            "path" : "pages/mine/new-goods",
+            "style" : {
+				"navigationBarTitleText": "新品需求"
+			}
+        }
+        ,{
+            "path" : "pages/mine/new-goods-add",
+            "style" : {
+				"navigationBarTitleText": "提报新品"
+			}
+        }
+        ,{
+            "path" : "pages/mine/after-sales",
+            "style" : {
+				"navigationBarTitleText": "退款售后"
+			}
+        }
+        ,{
+            "path" : "pages/scan/vin-input",
+            "style" : {
+				"navigationBarTitleText": "vin码输入"
+			}
+        }
+        ,{
+            "path" : "pages/other/good-detail",
+            "style" : {
+				"navigationBarTitleText": "商品详情"
+			}
+        }
+        ,{
+            "path" : "pages/mine/all-orders",
+            "style" : {
+				"navigationBarTitleText": "我的订单"
+			}
+        }
+        ,{
+            "path" : "pages/other/veh-detail",
+            "style" : {
+				"navigationBarTitleText": "车辆信息"
+			}
+        }
+        ,{
+            "path" : "pages/scan/scan-scan",
+            "style" : {}
+        },
+		{
+		    "path" : "pages/scan/scan-img",
+		    "style" : {
+				"navigationBarTitleText": "图片识别"
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "好好汽配",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F7F7F7"
+	},
+	"app-plus": {
+	    "softinputMode": "adjustResize"
+	}
+}

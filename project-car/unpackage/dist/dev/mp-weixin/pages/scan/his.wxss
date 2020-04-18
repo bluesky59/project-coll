@@ -1,0 +1,57 @@
+
+.history-container {
+	width: 100%;
+	height: auto;
+	background-color: #F7F7F7;
+	padding-bottom: 60rpx;
+}
+.his-date {
+	font-size: 32rpx;
+	color: #333;
+	line-height: 80rpx;
+	font-weight: 500;
+	padding-left: 30rpx;
+}
+.his-box {
+	width: 646rpx;
+	height: 140rpx;
+	padding: 0 24rpx;
+	background-color: #fff;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	margin: 24rpx auto;
+}
+.his-text {
+	background-color: 400rpx;
+}
+.his-series {
+	font-size: 30rpx;
+	color: #424A5D;
+	line-height: 44rpx;
+	font-weight: 500;
+	display: block;
+}
+.his-txt {
+	font-size: 30rpx;
+	color: #999;
+	line-height: 44rpx;
+	font-weight: 400;
+}
+.his-btn {
+	width: 156rpx;
+	height: 64rpx;
+	line-height: 64rpx;
+	border-radius: 32rpx;
+	text-align: center;
+	background-color: #FF5C00;
+	color: #fff;
+	font-size: 26rpx;
+}
+

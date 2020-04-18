@@ -1,0 +1,59 @@
+
+.invie-container.data-v-107df7cc {
+	width: 100vw;
+	text-align: center;
+	background-color: #F7F7F7;
+	padding-top: 660rpx;
+}
+.invite-info.data-v-107df7cc {
+	width: 690rpx;
+	height: 644rpx;
+	background: rgba(255,255,255,1);
+	box-shadow: 0px 2rpx 8rpx 0rpx rgba(231,231,231,1);
+	border-radius: 20rpx;
+	margin: 0 auto 60rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.invite-title.data-v-107df7cc {
+	font-size: 30rpx;
+	line-height: 60rpx;
+	color: #999;
+	font-weight: 400;
+	text-shadow: 0px 4rpx 16rpx rgba(231,231,231,1);
+}
+.invite-gift.data-v-107df7cc {
+	font-size: 88rpx;
+	line-height: 120rpx;
+	color: #333;
+	font-weight: bold;
+	text-shadow:0px 4rpx 16rpx rgba(231,231,231,1);
+}
+.invite-tips.data-v-107df7cc {
+	font-size: 30rpx;
+	line-height: 60rpx;
+	color: #333;
+	font-weight: 400;
+	text-shadow:0px 4rpx 16rpx rgba(231,231,231,1);
+}
+.invite-img.data-v-107df7cc {
+	width: 284rpx;
+	height: 272rpx;
+}
+.invite-remark.data-v-107df7cc {
+	font-size: 24rpx;
+	line-height: 80rpx;
+	color: #666;
+}
+

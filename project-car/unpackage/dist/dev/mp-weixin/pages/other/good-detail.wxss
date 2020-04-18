@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.good-detail-container.data-v-cb027eae {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding-bottom: 70rpx;
+}
+.good-detail-container .good-detail-tabs.data-v-cb027eae {
+    width: 100%;
+    height: 88rpx;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+}
+.good-detail-container .good-detail-tabs .good-detail-tab.data-v-cb027eae {
+      width: 30%;
+      height: 88rpx;
+      box-sizing: border-box;
+      line-height: 88rpx;
+      text-align: center;
+      font-size: 24rpx;
+      color: #333;
+}
+.good-detail-container .good-detail-tabs .good-detail-tab-sel.data-v-cb027eae {
+      color: #FF5101;
+      font-weight: 500;
+      border-bottom: 2rpx solid #FF5101;
+}
+.good-detail-container .swiper.data-v-cb027eae, .good-detail-container .swiper-item.data-v-cb027eae {
+    width: 750rpx;
+    height: 620rpx;
+}
+.good-detail-container .good-detail-headerbg.data-v-cb027eae {
+    width: 750rpx;
+    height: 620rpx;
+    vertical-align: top;
+}
+.good-detail-container .good-detail-des.data-v-cb027eae {
+    width: 750rpx;
+    height: 274rpx;
+}
+.good-detail-container .good-detail-sale.data-v-cb027eae {
+    width: 690rpx;
+    height: auto;
+    padding: 30rpx;
+    margin-top: 30rpx;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+            align-items: flex-start;
+}
+.good-detail-container .good-detail-sale .good-detail-sale-title.data-v-cb027eae {
+      font-size: 30rpx;
+      color: #424242;
+      font-weight: 500;
+      line-height: 52rpx;
+      margin-right: 40rpx;
+}
+.good-detail-container .good-detail-sale .good-detail-sale-info.data-v-cb027eae {
+      width: 480rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+              align-items: flex-start;
+}
+.good-detail-container .good-detail-sale .good-detail-sale-info .good-detail-sale-txt.data-v-cb027eae {
+        width: 100%;
+        height: 52rpx;
+        font-size: 24rpx;
+        color: #666;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+                justify-content: flex-start;
+}
+.good-detail-container .good-detail-sale .good-detail-sale-info .good-detail-sale-txt .good-detail-sale-text.data-v-cb027eae {
+          width: 60rpx;
+          height: 32rpx;
+          background-color: #FFE7DC;
+          border-radius: 4rpx;
+          text-align: center;
+          line-height: 32rpx;
+          font-size: 24rpx;
+          color: #FF5101;
+          display: inline-block;
+          margin-right: 28rpx;
+}
+.good-detail-container .good-detail-sale .good-detail-sale-info .good-detail-sale-txt .good-detail-sale-icon.data-v-cb027eae {
+          width: 158rpx;
+          height: 46rpx;
+}
+.good-detail-container .good-detail-params.data-v-cb027eae {
+    width: 690rpx;
+    padding: 30rpx;
+    margin-top: 30rpx;
+    background-color: #fff;
+}
+.good-detail-container .good-detail-params .good-detail-params-title.data-v-cb027eae {
+      font-size: 30rpx;
+      color: #333;
+      width: 100%;
+      height: 40rpx;
+      line-height: 40rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+}
+.good-detail-container .good-detail-params .good-detail-params-title .good-detail-params-icon.data-v-cb027eae {
+        width: 40rpx;
+        height: 40rpx;
+        margin-right: 24rpx;
+}
+.good-detail-container .good-detail-params .good-detail-params-list.data-v-cb027eae {
+      width: 690rpx;
+      height: auto;
+      margin: 30rpx auto;
+      border: 1rpx solid #E1E1E1;
+}
+.good-detail-container .good-detail-params .good-detail-params-list .good-detail-params-item.data-v-cb027eae {
+        width: 690rpx;
+        height: 56rpx;
+        border-bottom: 1rpx solid #E1E1E1;
+        font-size: 24rpx;
+        color: #999;
+        line-height: 56rpx;
+}
+.good-detail-container .good-detail-params .good-detail-params-list .good-detail-params-item .good-detail-params-label.data-v-cb027eae {
+          display: inline-block;
+          width: 164rpx;
+          height: 56rpx;
+          text-align: center;
+          border-right: 1rpx solid #E1E1E1;
+}
+.good-detail-container .good-detail-params .good-detail-params-list .good-detail-params-item .good-detail-params-value.data-v-cb027eae {
+          display: inline-block;
+          width: 520rpx;
+          height: 56rpx;
+          text-indent: 40rpx;
+}
+.good-detail-container .good-detail-params .good-detail-params-list .good-detail-params-item.data-v-cb027eae:last-child {
+        border-bottom: none;
+}
+.good-detail-container .good-detail-ad.data-v-cb027eae {
+    margin-top: 30rpx;
+}
+.good-detail-container .good-detail-ad .good-detail-ad-title.data-v-cb027eae {
+      width: 100%;
+      height: 100rpx;
+      background-color: #fff;
+      line-height: 100rpx;
+      font-size: 32rpx;
+      color: #333;
+      font-weight: 500;
+      text-indent: 30rpx;
+}
+.good-detail-container .good-detail-ad .good-detail-holder.data-v-cb027eae {
+      width: 750rpx;
+      height: 330rpx;
+}
+.good-detail-container .good-detail-btns.data-v-cb027eae {
+    width: 100%;
+    height: 100rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-concat.data-v-cb027eae {
+      width: 270rpx;
+      height: 100rpx;
+      background-color: #fff;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-concat .good-detail-concat.data-v-cb027eae {
+        width: 44rpx;
+        height: 100rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        font-size: 22rpx;
+        line-height: 30rpx;
+        color: #666;
+        margin-left: 44rpx;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-concat .good-detail-concat .good-detail-concat-icon.data-v-cb027eae {
+          width: 42rpx;
+          height: 36rpx;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-cart.data-v-cb027eae {
+      width: 220rpx;
+      height: 100rpx;
+      background-color: #FFB701;
+      line-height: 100rpx;
+      text-align: center;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-cart .good-detail-cart-icon.data-v-cb027eae {
+        width: 44rpx;
+        height: 44rpx;
+        margin-right: 12rpx;
+}
+.good-detail-container .good-detail-btns .good-detail-btns-add.data-v-cb027eae {
+      width: 270rpx;
+      height: 100rpx;
+      background-color: #FF5101;
+      line-height: 100rpx;
+}
+

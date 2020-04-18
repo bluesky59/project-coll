@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "特惠活动",
+  "usingComponents": {
+    "goods-list": "/pages/components/goods-list"
+  }
+}

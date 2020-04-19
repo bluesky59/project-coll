@@ -4,6 +4,7 @@
 			<view class="order-tabs">
 				<view @click="tabSwitch(index)" :class="{'after-sales-tab-active': tabIndex === index}" class="after-sales-tab" v-for="(item, index) in typesArr" :key="item">
 					<text>{{item.label}}</text>
+					<view v-show="tabIndex === index" class="tabs-divider"></view>
 				</view>
 			</view>
 			<image class="order-query" :src="`${baseUrl}/imgs/others/query-icon.png`"></image>
@@ -142,10 +143,20 @@
 					height: 88upx;
 					text-align: center;
 					line-height: 88upx;
+					position: relative;
 				}
 				.after-sales-tab-active {
 					color: #FF5101;
-					border-bottom: 1upx solid #FF5101;
+				}
+				.tabs-divider {
+					width: 20upx;
+					height: 6upx;
+					background:linear-gradient(180deg,rgba(255,126,11,1) 0%,rgba(255,58,61,1) 100%);
+					border-radius: 3upx;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
 				}
 			}
 			.order-query {

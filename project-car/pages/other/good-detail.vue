@@ -1,8 +1,12 @@
 <template>
 	<view class="good-detail-container">
 		<view class="good-detail-tabs">
-			<view @click="tabsSwitch(0)" :class="{'good-detail-tab-sel': tabsIndex === 0}" class="good-detail-tab">货品详情</view>
-			<view @click="tabsSwitch(1)" :class="{'good-detail-tab-sel': tabsIndex === 1}" class="good-detail-tab">适配车型</view>
+			<view @click="tabsSwitch(0)" :class="{'good-detail-tab-sel': tabsIndex === 0}" class="good-detail-tab">货品详情
+				<view v-show="tabsIndex === 0" class="tabs-divider"></view>
+			</view>
+			<view @click="tabsSwitch(1)" :class="{'good-detail-tab-sel': tabsIndex === 1}" class="good-detail-tab">适配车型
+				<view v-show="tabsIndex === 1" class="tabs-divider"></view>
+			</view>
 		</view>
 		<view v-if="tabsIndex === 0">
 			<swiper class="swiper" indicator-dots="true" autoplay="true">
@@ -135,11 +139,21 @@
 				text-align: center;
 				font-size: 24upx;
 				color: #333;
+				position: relative;
 			}
 			.good-detail-tab-sel {
 				color: #FF5101;
 				font-weight: 500;
-				border-bottom: 2upx solid #FF5101;
+			}
+			.tabs-divider {
+				width: 20upx;
+				height: 6upx;
+				background:linear-gradient(180deg,rgba(255,126,11,1) 0%,rgba(255,58,61,1) 100%);
+				border-radius: 3upx;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 		}
 		.swiper, .swiper-item {

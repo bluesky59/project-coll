@@ -51,11 +51,23 @@
       text-align: center;
       font-size: 24rpx;
       color: #333;
+      position: relative;
 }
 .good-detail-container .good-detail-tabs .good-detail-tab-sel.data-v-cb027eae {
       color: #FF5101;
       font-weight: 500;
-      border-bottom: 2rpx solid #FF5101;
+}
+.good-detail-container .good-detail-tabs .tabs-divider.data-v-cb027eae {
+      width: 20rpx;
+      height: 6rpx;
+      background: -webkit-linear-gradient(top, #ff7e0b 0%, #ff3a3d 100%);
+      background: linear-gradient(180deg, #ff7e0b 0%, #ff3a3d 100%);
+      border-radius: 3rpx;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
 }
 .good-detail-container .swiper.data-v-cb027eae, .good-detail-container .swiper-item.data-v-cb027eae {
     width: 750rpx;

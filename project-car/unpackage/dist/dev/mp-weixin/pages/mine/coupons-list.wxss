@@ -50,10 +50,22 @@
       font-size: 28rpx;
       line-height: 88rpx;
       color: #3A3A3A;
+      position: relative;
 }
 .coupons-list-container .coupons-lidt-tabs .coupons-list-tab-active.data-v-ca73213e {
       color: #FF5101;
-      border-bottom: 4rpx solid #FF5101;
+}
+.coupons-list-container .coupons-lidt-tabs .tabs-divider.data-v-ca73213e {
+      width: 20rpx;
+      height: 6rpx;
+      background: -webkit-linear-gradient(top, #ff7e0b 0%, #ff3a3d 100%);
+      background: linear-gradient(180deg, #ff7e0b 0%, #ff3a3d 100%);
+      border-radius: 3rpx;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
 }
 .coupons-list-container .coupons-list.data-v-ca73213e {
     width: 750rpx;

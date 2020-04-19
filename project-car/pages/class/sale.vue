@@ -20,6 +20,7 @@
 					<image class="condition-img" :src="`${baseUrl}/imgs/class/price-up-active.png`"></image>
 					<image class="condition-img" :src="`${baseUrl}/imgs/class/price-down-active.png`"></image>
 				</view>
+				<view v-show="conditionIndex === index" class="tabs-divider"></view>
 			</view>
 		</view>
 		<view class="content-main">
@@ -32,7 +33,7 @@
 		</view>
 		<image @click="skipTo" class="cart-icon" :src="`${baseUrl}/imgs/class/cart-icon.png`"></image>
 		<!-- 抽屉 -->
-		<view class="drawer-container" :class="{'drawer-container-animate': conditionIndex === 2}">
+		<view @touchmove.stop.prevent="moveHandle" class="drawer-container" :class="{'drawer-container-animate': conditionIndex === 2}">
 			<view class="drawer-box">
 				<view class="drawer-info">
 					<image class="drawer-icon" :src="`${baseUrl}/imgs/class/filter-icon.png`"></image>
@@ -43,7 +44,8 @@
 					<view class="drawer-list">
 						<view class="drawer-wrap" v-for="(item, index) in brandArr[1].dataList" :key="item"  @click="checkboxSelHandle('brand', index)">
 							<view :class="{'drawer-item-sel': brandSel === index}" class="drawer-item drawer-item-spe">
-								<image  v-if="index < 4" class="drawer-brand-img" :src="`${baseUrl}/imgs/imgs/brand/${item.nameEn}.png`"></image>
+								<image class="drawer-brand-img" :src="`${baseUrl}/imgs/brand/${item.nameEn}.png`"></image>
+								<image v-if="brandSel === index" class="sel-icon" src="/static/add/sel-icon.png"></image>
 							</view>
 							<text class="drawer-text">{{item.text}}</text>
 						</view>
@@ -52,8 +54,9 @@
 				<view class="drawer-section">
 					<text class="drawer-title">商品分类</text>
 					<view class="drawer-list">
-						<view v-if="index < 6" v-for="(item, index) in typesArr" :key="item" :class="{'drawer-item-sel': typesSel === index}" class="drawer-item" @click="checkboxSelHandle('type', index)">
+						<view v-if="index < 9" v-for="(item, index) in typesArr" :key="item" :class="{'drawer-item-sel': typesSel === index}" class="drawer-item" @click="checkboxSelHandle('type', index)">
 							<text>{{item.text}}</text>
+							<image v-if="typesSel === index" class="sel-icon" src="/static/add/sel-icon.png"></image>
 						</view>
 					</view>
 				</view>
@@ -103,6 +106,7 @@
 			}
 		},
 		methods: {
+			moveHandle() {},
 			tabsSwitch (index) {
 				this.conditionIndex = index;
 				switch (index) {
@@ -150,6 +154,13 @@
 </script>
 
 <style>
+	.sel-icon {
+		width: 52upx;
+		height: 52upx;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 	.sale-container {
 		width: 750upx;
 		min-height: 100vh;
@@ -204,10 +215,20 @@
 		font-size: 28upx;
 		color: #3A3A3A;
 		box-sizing: border-box;
+		position: relative;
+	}
+	.tabs-divider {
+		width: 20upx;
+		height: 6upx;
+		background:linear-gradient(180deg,rgba(255,126,11,1) 0%,rgba(255,58,61,1) 100%);
+		border-radius: 3upx;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	.condition-box-active {
 		color: #FF5A00;
-		border-bottom: 2upx solid #FF5A00;
 	}
 	.recommends-sort {
 		width: 40upx;
@@ -251,12 +272,12 @@
 	}
 	.drawer-container {
 		width: 750upx;
-		height: auto;
+		height: 100vh;
+		overflow: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
-		background-color: #000;
-		opacity: 0.8;
+		background-color: rgba(0,0,0,0.8);
 		z-index: 10;
 		transform: translateX(750upx);
 		transition: .5s;
@@ -266,7 +287,7 @@
 	}
 	.drawer-box {
 		width: 660upx;
-		height: auto;
+		height: 100vh;
 		background-color: #FFFFFF;
 		margin-left: 90upx;
 	}
@@ -310,6 +331,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: relative;
 	}
 	.drawer-item-sel {
 		border: 1upx solid #FF5101;

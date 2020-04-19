@@ -51,10 +51,22 @@
       height: 88rpx;
       text-align: center;
       line-height: 88rpx;
+      position: relative;
 }
 .after-sales-container .after-sales-tabs .after-sales-tab-active.data-v-92c5e9b0 {
       color: #FF5101;
-      border-bottom: 1rpx solid #FF5101;
+}
+.after-sales-container .after-sales-tabs .tabs-divider.data-v-92c5e9b0 {
+      width: 20rpx;
+      height: 6rpx;
+      background: -webkit-linear-gradient(top, #ff7e0b 0%, #ff3a3d 100%);
+      background: linear-gradient(180deg, #ff7e0b 0%, #ff3a3d 100%);
+      border-radius: 3rpx;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
 }
 .after-sales-container .after-sales-query.data-v-92c5e9b0 {
     width: 690rpx;

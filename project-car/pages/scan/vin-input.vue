@@ -2,7 +2,7 @@
 	<view class="import-container" :style="{background: `url(${imageBgUrl})`, backgroundSize: '375px 378px'}">
 		<view class="input-container">
 			<view class="import-inputs">
-				<input v-for="(item, index) in inputArr" maxlength="1" confirm-hold :focus="item.focus" @input.prevent="inputHandle(index)" v-model="item.value" :key="item.num" class="uni-input import-input" type="number" />
+				<input v-for="(item, index) in inputArr" maxlength="1" confirm-hold :focus="item.focus" @input.prevent="inputHandle(index)" v-model="item.value" :key="item.num" class="uni-input import-input" type="text" />
 			</view>
 			<view class="import-tips">
 				<text>长按输入框粘贴</text>

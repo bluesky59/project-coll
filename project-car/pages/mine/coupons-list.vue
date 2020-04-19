@@ -3,6 +3,7 @@
 		<view class="coupons-lidt-tabs">
 			<view :class="{'coupons-list-tab-active': tabsIndex === index}" @click="clickTab(index)" class="coupons-list-tab" v-for="(item, index) in tabsArr" :key="item">
 				<text>{{item.label}}</text>
+				<view v-show="tabsIndex === index" class="tabs-divider"></view>
 			</view>
 		</view>
 		<view class="coupons-list" v-if="tabsIndex === 0">
@@ -159,10 +160,20 @@
 				font-size: 28upx;
 				line-height: 88upx;
 				color: #3A3A3A;
+				position: relative;
 			}
 			.coupons-list-tab-active {
 				color: #FF5101;
-				border-bottom: 4upx solid #FF5101;
+			}
+			.tabs-divider {
+				width: 20upx;
+				height: 6upx;
+				background:linear-gradient(180deg,rgba(255,126,11,1) 0%,rgba(255,58,61,1) 100%);
+				border-radius: 3upx;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 		}
 		.coupons-list {

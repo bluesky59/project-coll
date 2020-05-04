@@ -377,7 +377,6 @@
 .class-content .class-goods-container .class-goods-info.data-v-71451202 {
       width: 600rpx;
       height: calc(100vh -346rpx);
-      overflow-y: scroll;
       text-align: center;
 }
 .class-content .class-goods-container .class-goods-info .class-type-children.data-v-71451202 {
@@ -410,8 +409,14 @@
           margin-right: 12rpx;
           display: inline-block;
 }
-.class-content .class-goods-container .class-goods-info .class-type-goods-detail.data-v-71451202 {
-        padding: 10rpx 30rpx;
+.class-content .class-goods-container .class-goods-info .class-type-goods-warp.data-v-71451202 {
+        padding: 30rpx;
+        height: calc(100% - 50rpx);
+}
+.class-content .class-goods-container .class-goods-info .class-type-goods-warp .class-type-goods-detail.data-v-71451202 {
+          height: calc(100% - 130rpx);
+          box-sizing: border-box;
+          overflow: scroll;
 }
 .class-content .class-goods-container .class-goods-info .class-nogoods-tips.data-v-71451202 {
         font-size: 24rpx;

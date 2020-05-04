@@ -7,7 +7,8 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 1
 	},
 	{
 		img: baseUrl + '/imgs/class/product-img.png',
@@ -15,7 +16,8 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 2
 	},
 	{
 		img: baseUrl + '/imgs/class/product-img.png',
@@ -23,7 +25,8 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 3
 	},
 	{
 		img: baseUrl + '/imgs/class/product-img.png',
@@ -31,7 +34,8 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 4
 	},
 	{
 		img: baseUrl + '/imgs/class/product-img.png',
@@ -39,7 +43,8 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 5
 	},
 	{
 		img: baseUrl + '/imgs/class/product-img.png',
@@ -47,6 +52,7 @@ export const saleArrs = [
 		coupons: true,
 		discount: true,
 		inventory: 299,
-		price: 172
+		price: 172,
+		id: 6
 	}
 ];

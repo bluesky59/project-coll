@@ -314,6 +314,7 @@
 .section-container.data-v-5479b484 {
 	width: 100%;
 	height: auto;
+	padding: 0;
 }
 .section-title.data-v-5479b484 {
 	font-size: 30rpx;

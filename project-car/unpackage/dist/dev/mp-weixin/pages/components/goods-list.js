@@ -83,6 +83,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.__map(_vm.saleArrs, function(item, __i0__) {
+    var m0 = _vm.calcNum(item)
+    var m1 = _vm.calcNum(item)
+    return {
+      $orig: _vm.__get_orig(item),
+      m0: m0,
+      m1: m1
+    }
+  })
+
+  var l1 = _vm.__map(_vm.saleArrs, function(item, index) {
+    var m2 = _vm.calcNum(item)
+    var m3 = _vm.calcNum(item)
+    return {
+      $orig: _vm.__get_orig(item),
+      m2: m2,
+      m3: m3
+    }
+  })
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0,
+        l1: l1
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -206,7 +235,34 @@ var _apiClassGoods = __webpack_require__(/*! ../../mock/api-class-goods.js */ 26
 //
 //
 var _default = { name: 'goods-list', props: { // 是否有特殊处理事件 默认值： 否
-    eventHandle: { type: String, default: '' }, hot: { type: Boolean, default: false } }, data: function data() {return { saleArrs: _apiClassGoods.saleArrs, baseUrl: 'http://39.108.65.247:8087', num: 0 };}, methods: { goodNumControl: function goodNumControl(tag) {switch (tag) {case 'reduce':{this.num = Math.max(0, --this.num);break;}case 'plus':{this.num = Math.min(200, ++this.num);break;}default:break;}}, productPlus: function productPlus() {this.num = 1;}, skipTo: function skipTo() {uni.navigateTo({ url: "/pages/other/good-detail" });} } };exports.default = _default;
+    eventHandle: { type: String, default: '' }, hot: { type: Boolean, default: false } }, data: function data() {return { saleArrs: _apiClassGoods.saleArrs, baseUrl: 'http://39.108.65.247:8087', numsArr: [] };}, methods: { calcNum: function calcNum(data) {var obj = this.numsArr.find(function (good) {return good.id === data.id;});if (obj) {return obj.num;}return 0;}, goodNumControl: function goodNumControl(data, tag) {var obj = this.numsArr.find(function (good) {return good.id === data.id;});switch (tag) {case 'reduce':{if (obj) {obj.num = Math.max(0, --obj.num);} else {this.numsArr.push({ id: data.id, num: Math.max(0, --obj.num) });}break;}case 'plus':{if (obj) {obj.num = Math.min(200, ++obj.num);
+            } else {
+              this.numsArr.push({
+                id: data.id,
+                num: Math.min(200, ++obj.num) });
+
+            }
+            break;
+          }
+        default:break;}
+
+    },
+    productPlus: function productPlus(data) {
+      var obj = this.numsArr.find(function (good) {return good.id === data.id;});
+      if (obj) {
+        obj.num = obj.num + 1;
+      } else {
+        this.numsArr.push({
+          id: data.id,
+          num: 1 });
+
+      }
+    },
+    skipTo: function skipTo() {
+      uni.navigateTo({
+        url: "/pages/other/good-detail" });
+
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -9,11 +9,11 @@
 				<text class="product-inventory">库存{{item.inventory}}</text>
 				<text class="product-price">¥ {{item.price}}</text>
 				<view class="product-action">
-					<image @click.prevent="productPlus" v-if="num === 0" class="product-plus" :src="`${baseUrl}/imgs/class/add-icon.png`"></image>
+					<image @click.prevent="productPlus(item)" v-if="calcNum(item) === 0" class="product-plus" :src="`${baseUrl}/imgs/class/add-icon.png`"></image>
 					<view v-else class="cart-num-control">
-						<view @click.prevent="goodNumControl('reduce')" class="cart-num-control-action cart-num-control-op">-</view>
-						<view class="cart-num-control-action cart-num-control-num">{{num}}</view>
-						<view @click.prevent="goodNumControl('plus')" class="cart-num-control-action cart-num-control-op">+</view>
+						<view @click.prevent="goodNumControl(item, 'reduce')" class="cart-num-control-action cart-num-control-op">-</view>
+						<view class="cart-num-control-action cart-num-control-num">{{calcNum(item)}}</view>
+						<view @click.prevent="goodNumControl(item, 'plus')" class="cart-num-control-action cart-num-control-op">+</view>
 					</view>
 				</view>
 			</view>
@@ -29,11 +29,11 @@
 					<text class="product-inventory">库存{{item.inventory}}</text>
 					<text class="product-price">¥ {{item.price}}</text>
 					<view class="product-action">
-						<image @click.prevent="productPlus" v-if="num === 0" class="product-plus" :src="`${baseUrl}/imgs/class/add-icon.png`"></image>
+						<image @click.prevent="productPlus(item)" v-if="calcNum(item) === 0" class="product-plus" :src="`${baseUrl}/imgs/class/add-icon.png`"></image>
 						<view v-else class="cart-num-control">
-							<view @click.prevent="goodNumControl('reduce')" class="cart-num-control-action cart-num-control-op">-</view>
-							<view class="cart-num-control-action cart-num-control-num">{{num}}</view>
-							<view @click.prevent="goodNumControl('plus')" class="cart-num-control-action cart-num-control-op">+</view>
+							<view @click.prevent="goodNumControl(item, 'reduce')" class="cart-num-control-action cart-num-control-op">-</view>
+							<view class="cart-num-control-action cart-num-control-num">{{calcNum(item)}}</view>
+							<view @click.prevent="goodNumControl(item, 'plus')" class="cart-num-control-action cart-num-control-op">+</view>
 						</view>
 					</view>
 				</view>
@@ -61,25 +61,55 @@
 			return {
 				saleArrs,
 				baseUrl: 'http://39.108.65.247:8087',
-				num: 0
+				numsArr: []
 			}
 		},
 		methods: {
-			goodNumControl(tag) {
+			calcNum(data) {
+				const obj = this.numsArr.find(good => good.id === data.id);
+				if (obj) {
+					return obj.num;
+				}
+				return 0;
+			},
+			goodNumControl(data, tag) {
+				const obj = this.numsArr.find(good => good.id === data.id);
 				switch (tag) {
 					case 'reduce': {
-						this.num = Math.max(0, --this.num);
+						if (obj) {
+							obj.num = Math.max(0, --obj.num);
+						} else {
+							this.numsArr.push({
+								id: data.id,
+								num: Math.max(0, --obj.num)
+							});
+						}
 						break;
 					}
 					case 'plus': {
-						this.num = Math.min(200, ++this.num);
+						if (obj) {
+							obj.num = Math.min(200, ++obj.num);
+						} else {
+							this.numsArr.push({
+								id: data.id,
+								num: Math.min(200, ++obj.num)
+							});
+						}
 						break;
 					}
 					default: break;
 				}
 			},
-			productPlus() {
-				this.num = 1;
+			productPlus(data) {
+				const obj = this.numsArr.find(good => good.id === data.id);
+				if (obj) {
+					obj.num = obj.num + 1;
+				} else {
+					this.numsArr.push({
+						id: data.id,
+						num: 1
+					});
+				}
 			},
 			skipTo() {
 				uni.navigateTo({

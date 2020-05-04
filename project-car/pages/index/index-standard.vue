@@ -2,7 +2,7 @@
 	<view class="standard-content">
 		<!-- 头图 -->
 		<view class="header-container" :style="{backgroundImage:                             
-        'url('+imageURL+')', backgroundSize: '375px 475px'}">
+        'url('+imageURL+')', backgroundSize: 'contain'}">
 			<view class="nav-container">
 				<!-- 搜索 -->
 				<view class="query-input">
@@ -462,6 +462,7 @@
 	.section-container {
 		width: 100%;
 		height: auto;
+		padding: 0;
 	}
 	.section-title {
 		font-size: 30upx;

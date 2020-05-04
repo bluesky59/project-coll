@@ -1,6 +1,6 @@
 <template>
 	<view class="mine-container">
-		<view class="mine-header" :style="{background: `url(${imageBgUrl})`, backgroundSize: '375px 247px'}">
+		<view class="mine-header" :style="{background: `url(${imageBgUrl})`, backgroundSize: 'contain'}">
 			<image class="mine-headernick" :src="`${baseUrl}/imgs/mine/headernick.png`"></image>
 			<text>Amaz.qinlan</text>
 			<view class="mine-info">

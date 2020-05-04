@@ -1,5 +1,5 @@
 <template>
-	<view class="invie-container" :style="{backgroundImage: `url(${imgUrl})`, backgroundSize: '375px 427px', backgroundRepeat: 'no-repeat'}">
+	<view class="invie-container" :style="{backgroundImage: `url(${imgUrl})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}">
 		<view class="invite-info">
 			<text class="invite-title">限时推广最高可得</text>
 			<text class="invite-gift">30000.00</text>

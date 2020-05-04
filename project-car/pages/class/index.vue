@@ -46,10 +46,12 @@
 							{{item.label}}
 						</view>
 					</view>
-					<view class="class-type-goods-detail">
-						<goodsList :hot="true"></goodsList>
+					<view class="class-type-goods-warp">
+						<view class="class-type-goods-detail">
+							<goodsList :hot="true"></goodsList>
+						</view>
+						<text @click="skipTo" class="class-nogoods-tips">没有找到相关产品？<text class="class-nogoods-tips-spe">告诉我们</text></text>
 					</view>
-					<text @click="skipTo" class="class-nogoods-tips">没有找到相关产品？<text class="class-nogoods-tips-spe">告诉我们</text></text>
 				</view>
 			</view>
 			<view class="class-brand-sel" :class="{'class-brand-sel-show': tabsIndex === 1, 'class-brand-sel-hide': tabsIndex !== 1}">
@@ -326,7 +328,6 @@
 			.class-goods-info {
 				width: 600upx;
 				height:calc(100vh -346upx);
-				overflow-y: scroll;
 				text-align: center;
 				.class-type-children {
 					width: 560upx;
@@ -351,8 +352,14 @@
 						display: inline-block;
 					}
 				}
-				.class-type-goods-detail {
-					padding: 10upx 30upx;
+				.class-type-goods-warp {
+					padding: 30upx;
+					height:calc(100% - 50upx);
+					.class-type-goods-detail {
+						height:calc(100% - 130upx);
+						box-sizing: border-box;
+						overflow: scroll;
+					}
 				}
 				.class-nogoods-tips {
 					font-size: 24upx;

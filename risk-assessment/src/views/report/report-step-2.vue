@@ -7,7 +7,7 @@
                 <h4 class="content-title">新建报备</h4>
                 <div class="content-divider"></div>
                 <p class="content-tips">上传资料建立新项目</p>
-                <stepCom :stepIndex="1" />
+                <stepCom :stepArr="step4" :stepIndex="1" />
                 <el-form class="content-form" ref="form" :model="form" label-width="80px">
                     <el-row>
                         <el-col :span="11">
@@ -71,6 +71,7 @@ import navCom from '@/components/nav.vue'
 import footerCom from '@/components/footer.vue'
 import stepCom from '@/components/step.vue'
 import { navArrs } from '@/data/nav.js';
+import { step4 } from '@/data/step.js';
 export default {
     components: {
         navCom, footerCom, stepCom
@@ -78,6 +79,7 @@ export default {
     data() {
         return {
             navArrs,
+            step4,
             parjectArrs: [
                 {
                 number: 'GZ-GY-NM-BMH-JS-170705',

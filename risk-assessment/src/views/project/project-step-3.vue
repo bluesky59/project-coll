@@ -7,7 +7,7 @@
           <h4 class="content-title">新建项目</h4>
           <div class="content-divider"></div>
           <p class="content-tips">上传资料建立新项目</p>
-          <stepCom :stepIndex="2" />
+          <stepCom :stepArr="step4" :stepIndex="2" />
           <div class="main-query">
             <img class="main-query-icon" src="../../assets/imgs/search-icon.png" />
             <el-input placeholder="输入关键字搜索企业专家"></el-input>
@@ -94,6 +94,7 @@ import navCom from '@/components/nav.vue'
 import footerCom from '@/components/footer.vue'
 import stepCom from '@/components/step.vue'
 import { navArrs } from '@/data/nav.js';
+import { step4 } from '@/data/step.js';
 
 export default {
   name: 'Home',
@@ -103,6 +104,7 @@ export default {
   data() {
     return {
       navArrs,
+      step4,
         conpanyArrs: [
           {
             name: '大钟稳评有限公司',

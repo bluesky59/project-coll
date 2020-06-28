@@ -17,7 +17,7 @@
                   </div>
                 </div>
               </div>
-              <div class="company-action" v-for="item in actionArrs" :key="item.lable">
+              <div class="company-action" @click="actionHandle(item)" v-for="item in actionArrs" :key="item.lable">
                   <img class="company-action-img" :src="require(`../../assets/imgs/company/c-${item.img}.png`)" />
                   {{item.label}}
               </div>
@@ -29,8 +29,36 @@
               </div>
           </div>
           <div class="main-chart">
-              <div class="main-chart-bar" id="mainChartBar"></div>
-              <div class="main-chart-line" id="mainChartLine"></div>
+              <div class="chart-line-divider">
+                <div class="chart-title">
+                  <span class="chart-title-d"></span>
+                  <span class="chart-title-t">年项目情况</span>
+                  <el-select size="small" v-model="value" placeholder="请选择">
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                  </el-select>
+                </div>
+                <div class="main-chart-bar" id="mainChartBar"></div>
+              </div>
+              <div class="chart-bar-divider">
+                <div class="chart-title">
+                  <span class="chart-title-d"></span>
+                  <span class="chart-title-t">月项目情况</span>
+                  <el-select size="small" v-model="value" placeholder="请选择">
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                  </el-select>
+                </div>
+                <div class="main-chart-line" id="mainChartLine"></div>
+              </div>
           </div>
           <div class="home-project-list">
               <div class="main-tabs">
@@ -59,6 +87,14 @@
           </div>
     </div>
     <footerCom />
+    <div v-if="isShowMask" class="mask-container">
+      <div class="mask-action-container">
+        <div class="company-action" v-for="item in maskArrs" :key="item.lable">
+          <img class="company-action-img" :src="require(`../../assets/imgs/company/c-${item.img}.png`)" />
+          {{item.label}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -76,6 +112,12 @@ export default {
   },
   data() {
     return {
+      options: [{
+        value: '项目数量',
+        label: '项目数量'
+      }],
+      value: '项目数量',
+      isShowMask: false,
         statisticsArrs: [
             {
                 label: '年项目总数',
@@ -104,15 +146,35 @@ export default {
         actionArrs: [
             {
                 label: '项目审查',
+                img: '0',
+                handle: () => {
+                  this.isShowMask = !this.isShowMask;
+                }
+            },
+            {
+                label: '报备审查',
+                img: '1',
+                handle: () => {
+                  this.$router.push('/manager/project/backend');
+                }
+            },
+            {
+                label: '跟踪报告',
+                img: '2'
+            },
+            {
+                label: '跟踪报告',
+                img: '2'
+            }
+        ],
+        maskArrs: [
+            {
+                label: '项目审查',
                 img: '0'
             },
             {
                 label: '报备审查',
                 img: '1'
-            },
-            {
-                label: '跟踪报告',
-                img: '2'
             },
             {
                 label: '跟踪报告',
@@ -169,6 +231,9 @@ export default {
   methods: {
     tabsSwitch(index) {
       this.tabsIndex = index;
+    },
+    actionHandle(data) {
+      data.handle && data.handle();
     }
   },
   mounted() {
@@ -305,6 +370,7 @@ export default {
               flex-direction: column;
               font-size: 0.16rem;
               color: #333;
+              cursor: pointer;
               .company-action-img {
                   width: 0.4rem;
                   height: 0.4rem;
@@ -356,20 +422,86 @@ export default {
         justify-content: space-between;
         height: 4.32rem;
         margin: 0.3rem 0;
+        .chart-line-divider {
+          width: 5.6rem;
+          background-color: #fff;
+        }
+        .chart-bar-divider {
+          width: 8.6rem;
+          background-color: #fff;
+        }
+        .chart-title {
+          height: 0.8rem;
+          padding-left: 0.5rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .chart-title-d {
+            width: 4px;
+            height: 0.22rem;
+            background-color: #2A82E4;
+            margin-right: 0.22rem;
+            display: inline-block;
+          }
+          .chart-title-t {
+            font-size: 0.16rem;
+            font-family:PingFangSC-Regular,PingFang SC;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+            line-height:0.22rem;
+          }
+        }
         .main-chart-bar {
             width: 5.6rem;
-            background-color: #fff;
+            height: 3.52rem;
         }
         .main-chart-line {
             width: 8.6rem;
-            background-color: #fff;
+            height: 3.52rem;
         }
     }
+  }
+  .mask-container {
+    width: 100%;
+    height: 1.52rem;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 10;
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    .mask-action-container {
+      display: flex;
+      width: 14.4rem;
+      height: 1.2rem;
+      margin: 0.15rem auto;
+    }
+    .company-action {
+      width: 1.2rem;
+      height: 1.2rem;
+      background-color: #fff;
+      box-shadow:0px 2px 20px 0px rgba(0,0,0,0.06);
+      margin-left: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 0.16rem;
+      color: #333;
+      .company-action-img {
+          width: 0.4rem;
+          height: 0.4rem;
+          margin-bottom: 6px;
+      }
+   }
   }
 </style>
 
 <style>
   .el-input__inner {
-    border-color: transparent;
+    border-color: #2A82E4;
+    border-radius: 0.17rem;
+  }
+  .el-select {
+    margin-left: 0.25rem;
   }
 </style>

@@ -1,12 +1,6 @@
 export const lineOption = {
-  title: {
-    text: '月项目情况'
-  },
   tooltip: {
     trigger: 'axis'
-  },
-  legend: {
-    data: ['2020', '2019', '2018']
   },
   grid: {
     left: '3%',
@@ -45,9 +39,6 @@ export const lineOption = {
 }
 
 export const barOption = {
-  title: {
-    text: '年项目情况'
-  },
   xAxis: {
     type: 'category',
     data: ['2017', '2018', '2019', '2020']

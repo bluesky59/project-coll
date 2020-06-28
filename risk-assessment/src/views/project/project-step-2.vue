@@ -8,7 +8,7 @@
           <div class="content-divider"></div>
           <p class="content-tips">上传资料建立新项目</p>
           <div class="main-content-d">
-            <stepCom :stepIndex="2" />
+            <stepCom :stepArr="step4" :stepIndex="2" />
             <el-row>
                 <el-col :span="23">
                     <div class="content-form-divider">
@@ -43,6 +43,7 @@ import navCom from '@/components/nav.vue'
 import footerCom from '@/components/footer.vue'
 import stepCom from '@/components/step.vue'
 import { navArrs } from '@/data/nav.js';
+import { step4 } from '@/data/step.js';
 
 export default {
   name: 'Home',
@@ -52,6 +53,7 @@ export default {
   data() {
     return {
       navArrs,
+      step4,
       contentIndex: 1,
         arrs: [
           {

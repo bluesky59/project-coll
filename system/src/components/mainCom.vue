@@ -1,10 +1,9 @@
 <template>
   <div class="main-container">
-    <div class="main-header"></div>
-    <div class="main-content">
-      <div class="main-map">
-        <img @click="infoTriggerHandle" class="map-table" src="../assets/imgs/map-table.png" />
-      </div>
+    <headerCom class="main-header" v-if="true" />
+    <div class="main-content" v-if="true">
+      <mapCom class="main-map"
+        @infoTriggerHandle="infoTriggerHandle"/>
       <div class="main-echarts" v-show="showEcharts">
         <div class="main-echarts-top">
           <div class="main-echarts-left">
@@ -13,7 +12,26 @@
                 <p class="echarts-title-txt">临兴区块产能完成情况</p>
                 <div class="echarts-title-divider"></div>
               </div>
-              <div class="echarts-container" ref="chart1"></div>
+              <div class="echarts-container circle-container">
+                <div class="circle-box circle-box-1">
+                  <div class="circle-pic">
+                    <p class="circle-num">24</p>
+                  </div>
+                  <p class="circle-title">计划,亿方</p>
+                </div>
+                <div class="circle-box circle-box-2">
+                  <div class="circle-pic">
+                    <p class="circle-num">18.5</p>
+                  </div>
+                  <p class="circle-title">建成产能,亿方</p>
+                </div>
+                <div class="circle-box circle-box-3">
+                  <div class="circle-pic">
+                    <p class="circle-num">77.1</p>
+                  </div>
+                  <p class="circle-title">完成率,%</p>
+                </div>
+              </div>
             </section>
             <section class="echarts-box">
               <div class="echarts-title">
@@ -53,11 +71,15 @@ import echarts from 'echarts';
 import data from '../assets/data';
 import bottomCom from './bottom.vue';
 import infoCom from './info.vue';
+import mapCom from './map.vue';
+import headerCom from './header.vue';
 
 @Component({
   components: {
     bottomCom,
     infoCom,
+    mapCom,
+    headerCom,
   },
 })
 
@@ -88,10 +110,8 @@ export default class MainCom extends Vue {
   overflow: hidden;
   background-color: #eff5fd;
   .main-header {
-    width: 100%;
+    width: 100vw;
     height: 0.9rem;
-    background: url("../assets/imgs/header-bg.jpg") no-repeat;
-    background-size: cover;
   }
   .main-content {
     padding: 0 0.1rem 0 0.16rem;
@@ -105,7 +125,6 @@ export default class MainCom extends Vue {
       width: 6.65rem;
       height: 100%;
       border-radius: 6px;
-      background: url("../assets/imgs/map-bg.jpg") no-repeat;
       background-size: cover;
       position: relative;
       .map-table {
@@ -158,6 +177,56 @@ export default class MainCom extends Vue {
           .echarts-container {
             width: 100%;
             height: 1.4rem;
+          }
+          .circle-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .circle-box {
+              width: 30%;
+              text-align: center;
+              .circle-pic {
+                width: 0.72rem;
+                height: 0.72rem;
+                text-align: center;
+                line-height: 0.72rem;
+                margin: 0 auto;
+                .circle-num {
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+              }
+              .circle-title {
+                font-size: 12px;
+                color: #54677c;
+                margin-top: 10px;
+              }
+            }
+            .circle-box-1 {
+              .circle-pic {
+                background: url("../assets/imgs/circular01.png") no-repeat center;
+                .circle-num {
+                  color: #01aeb3;
+                }
+              }
+            }
+            .circle-box-2 {
+              .circle-pic {
+                background: url("../assets/imgs/circular02.png") no-repeat center;
+                .circle-num {
+                  color: #ff8100;
+                }
+              }
+            }
+            .circle-box-3 {
+              .circle-pic {
+                background: url("../assets/imgs/circular03.png") no-repeat center;
+                .circle-num {
+                  color: #2e99fd;
+                }
+              }
+            }
           }
         }
       }

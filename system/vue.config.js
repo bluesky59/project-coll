@@ -1,4 +1,9 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: './'
-}
+  publicPath: './',
+  configureWebpack: {
+    externals: {
+      AMap: 'AMap',
+    },
+  },
+};

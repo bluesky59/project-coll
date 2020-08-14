@@ -26,7 +26,7 @@ html, body {
   font-size: calc(100vw / 13.66);
   color: #333;
 }
-html, body, p, div {
+html, body, p, div, img {
   margin: 0;
   padding: 0;
 }

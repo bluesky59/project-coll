@@ -26,82 +26,13 @@ const data = [{
 export default {
   left: [
     {
-      dom: 'chart1',
-      optionData: {
-        title: [{
-          text: '',
-        }, {
-          subtext: '计划,亿方',
-          left: '16.67%',
-          top: '75%',
-          textAlign: 'center',
-        }, {
-          subtext: '建成产能,亿方',
-          left: '50%',
-          top: '75%',
-          textAlign: 'center',
-        }, {
-          subtext: '完成率%',
-          left: '83.33%',
-          top: '75%',
-          textAlign: 'center',
-        }],
-        series: [{
-          type: 'pie',
-          radius: '25%',
-          center: ['50%', '50%'],
-          data,
-          animation: false,
-          label: {
-            position: 'outer',
-            alignTo: 'none',
-            bleedMargin: 5,
-          },
-          left: 0,
-          right: '66.6667%',
-          top: 0,
-          bottom: 0,
-        }, {
-          type: 'pie',
-          radius: '25%',
-          center: ['50%', '50%'],
-          data,
-          animation: false,
-          label: {
-            position: 'outer',
-            alignTo: 'labelLine',
-            bleedMargin: 5,
-          },
-          left: '33.3333%',
-          right: '33.3333%',
-          top: 0,
-          bottom: 0,
-        }, {
-          type: 'pie',
-          radius: '25%',
-          center: ['50%', '50%'],
-          data,
-          animation: false,
-          label: {
-            position: 'outer',
-            alignTo: 'edge',
-            margin: 20,
-          },
-          left: '66.6667%',
-          right: 0,
-          top: 0,
-          bottom: 0,
-        }],
-      },
-    },
-    {
       dom: 'chart2',
       optionData: {
         legend: {
           orient: 'vertical',
           right: 20,
           top: 40,
-          data: ['新建产能', '老井产能'],
+          data: ['新建产能 9.16', '老井产能 9.3'],
         },
         color: ['#1caafc', '#f9a31a'],
         series: [
@@ -125,8 +56,8 @@ export default {
               show: false,
             },
             data: [
-              { value: 9.16, name: '新建产能' },
-              { value: 9.3, name: '老井产能' },
+              { value: 9.16, name: '新建产能 9.16' },
+              { value: 9.3, name: '老井产能 9.3' },
             ],
           },
         ],
@@ -154,8 +85,24 @@ export default {
         xAxis: { type: 'category' },
         yAxis: {},
         series: [
-          { type: 'bar', barWidth: 6 },
-          { type: 'bar', barWidth: 6 },
+          {
+            type: 'bar',
+            barWidth: 12,
+            itemStyle: {
+              normal: {
+                barBorderRadius: [30, 30, 0, 0],
+              },
+            },
+          },
+          {
+            type: 'bar',
+            barWidth: 12,
+            itemStyle: {
+              normal: {
+                barBorderRadius: [30, 30, 0, 0],
+              },
+            },
+          },
         ],
       },
     },
@@ -195,14 +142,14 @@ export default {
             type: 'bar',
             stack: '产能',
             data: [120, 132, 101, 134, 90, 230, 210],
-            barWidth: 6,
+            barWidth: 12,
           },
           {
             name: '2020年老井产能,亿方',
             type: 'bar',
             stack: '产能',
             data: [220, 182, 191, 234, 290, 330, 310],
-            barWidth: 6,
+            barWidth: 12,
           },
         ],
       },
@@ -225,9 +172,6 @@ export default {
           bottom: '3%',
           containLabel: true,
         },
-        legend: {
-          data: ['搜索引擎'],
-        },
         xAxis: [
           {
             type: 'category',
@@ -243,7 +187,7 @@ export default {
           {
             name: '搜索引擎',
             type: 'bar',
-            barWidth: 12,
+            barWidth: 20,
             data: [8, 7, 6, 5, 4, 3, 2],
             markLine: {
               lineStyle: {
@@ -255,6 +199,7 @@ export default {
             },
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -291,9 +236,10 @@ export default {
         series: [
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -307,9 +253,10 @@ export default {
           },
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -346,9 +293,10 @@ export default {
         series: [
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -362,9 +310,10 @@ export default {
           },
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -401,9 +350,10 @@ export default {
         series: [
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -417,9 +367,10 @@ export default {
           },
           {
             type: 'bar',
-            barWidth: 10,
+            barWidth: 20,
             itemStyle: {
               normal: {
+                barBorderRadius: [30, 30, 0, 0],
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -440,150 +391,351 @@ export default {
       dom: 'chart1',
       optionData: {
         tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
-          },
+          trigger: 'axis'
         },
-        color: ['#1caafc', '#f9a31a'],
         grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
-          containLabel: true,
+          containLabel: true
         },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              color: '#1B253A',
+              fontStyle: 'normal',
+              fontFamily: '微软雅黑',
+              fontSize: 12,
+            },
           },
-        ],
+          axisTick:{
+            show: false,
+          },
+          axisLine:{
+            lineStyle:{
+              color:'#E5E9ED',
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#E5E9ED',
+            }
+          }
+        },
         yAxis: [
           {
             type: 'value',
-          },
+            splitNumber: 5,
+            axisLabel: {
+              textStyle: {
+                color: '#a8aab0',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,
+              }
+            },
+            axisLine:{
+              show: false
+            },
+            axisTick:{
+              show: false
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: '#E5E9ED',
+              }
+            }
+
+          }
         ],
         series: [
           {
             name: '开井时间',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [26, 17, 25, 19, 17, 26, 21],
+            itemStyle: {
+              normal: {
+                color:'#60b9e7',
+                lineStyle: {
+                  color: "#60b9e7",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(96,185,231,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(96,185,231,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [ 1, 2, 3, 3, 5, 7, 10]
           },
           {
             name: '计量产液',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [4, 14, 6, 14, 12, 22, 27],
-          },
-        ],
+            itemStyle: {
+              normal: {
+                color:'#faa92b',
+                lineStyle: {
+                  color: "#faa92b",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(250,169,43,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(250,169,43,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [9, 5, 7, 8, 6, 5, 2]
+          }
+        ]
       },
     },
     {
       dom: 'chart2',
       optionData: {
         tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
-          },
+          trigger: 'axis'
         },
-        color: ['#bd1af9', '#fc1c4b'],
         grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
-          containLabel: true,
+          containLabel: true
         },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              color: '#1B253A',
+              fontStyle: 'normal',
+              fontFamily: '微软雅黑',
+              fontSize: 12,
+            },
           },
-        ],
+          axisTick:{
+            show: false,
+          },
+          axisLine:{
+            lineStyle:{
+              color:'#E5E9ED',
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#E5E9ED',
+            }
+          }
+        },
         yAxis: [
           {
             type: 'value',
-          },
+            splitNumber: 5,
+            axisLabel: {
+              textStyle: {
+                color: '#a8aab0',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,
+              }
+            },
+            axisLine:{
+              show: false
+            },
+            axisTick:{
+              show: false
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: '#E5E9ED',
+              }
+            }
+
+          }
         ],
         series: [
           {
             name: '折算产气量',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [51, 34, 50, 45, 50, 52, 40],
+            itemStyle: {
+              normal: {
+                color:'#c53bfa',
+                lineStyle: {
+                  color: "#c53bfa",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(197,59,250,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(197,59,250,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [ 1, 2, 3, 3, 5, 7, 10]
           },
           {
             name: '产气量',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [8, 28, 20, 11, 29, 14, 54],
-          },
-        ],
+            itemStyle: {
+              normal: {
+                color:'#f43f71',
+                lineStyle: {
+                  color: "#f43f71",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(244,63,113,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(244,63,113,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [9, 5, 7, 8, 6, 5, 2]
+          }
+        ]
       },
     },
     {
       dom: 'chart3',
       optionData: {
         tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
-          },
-        },
-        color: ['#29f095', '#2656f3'],
-        legend: {
-          data: ['开井时间', '计量产液', '折算产气量', '产气量', '套压', '油压'],
+          trigger: 'axis'
         },
         grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
-          containLabel: true,
+          containLabel: true
         },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['2020.1.1', '2020.2.1', '2020.3.1', '2020.4.1', '2020.5.1', '2020.6.1', '2020.7.1'],
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              color: '#1B253A',
+              fontStyle: 'normal',
+              fontFamily: '微软雅黑',
+              fontSize: 12,
+            },
           },
-        ],
+          axisTick:{
+            show: false,
+          },
+          axisLine:{
+            lineStyle:{
+              color:'#E5E9ED',
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#E5E9ED',
+            }
+          }
+        },
         yAxis: [
           {
             type: 'value',
-          },
+            splitNumber: 5,
+            axisLabel: {
+              textStyle: {
+                color: '#a8aab0',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,
+              }
+            },
+            axisLine:{
+              show: false
+            },
+            axisTick:{
+              show: false
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: '#E5E9ED',
+              }
+            }
+
+          }
         ],
         series: [
           {
             name: '套压',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [50, 34, 48, 38, 46, 52, 41],
+            itemStyle: {
+              normal: {
+                color:'#36f09c',
+                lineStyle: {
+                  color: "#36f09c",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(54,240,156,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(54,240,156,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [ 1, 2, 3, 3, 5, 7, 10]
           },
           {
             name: '油压',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [8, 28, 20, 11, 30, 16, 54],
-          },
-        ],
+            itemStyle: {
+              normal: {
+                color:'#3c76ee',
+                lineStyle: {
+                  color: "#3c76ee",
+                  width:1
+                },
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(60,138,238,0)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(60,138,238,0.35)'
+                  }]),
+                }
+              }
+            },
+            data: [9, 5, 7, 8, 6, 5, 2]
+          }
+        ]
       },
     },
   ],

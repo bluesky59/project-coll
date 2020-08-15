@@ -20,7 +20,7 @@
     <div class="map-table">
       <div class="map-table-header">
         <p>LX-151已开发井</p>
-        <p class="map-table-detail" @click="infoTriggerHandle">详细信息></p>
+        <p @click="infoTriggerHandle">详细信息></p>
       </div>
       <div class="map-table-body" v-for="item in tableContent" :key="item.id">
         <div class="map-t-col map-t-col-label">{{item.label1}}</div>
@@ -179,9 +179,6 @@ export default class MapCom extends Vue {
       font-size: 14px;
       color: #fff;
       padding: 0 0.1rem;
-      .map-table-detail {
-        cursor: pointer;
-      }
     }
     .map-table-body {
       width: 2.17rem;
@@ -191,6 +188,7 @@ export default class MapCom extends Vue {
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      cursor: pointer;
       .map-t-col {
         width: 25%;
         height: 0.35rem;

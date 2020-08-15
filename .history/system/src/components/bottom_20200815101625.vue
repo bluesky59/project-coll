@@ -86,7 +86,7 @@ import data from '../assets/data';
 
 @Component
 export default class Bottom extends Vue {
-  tabsArr = ['产能', '钻井', '压裂', '工程']
+  tabsArr = ['产能', '转井', '压裂', '工程']
 
   tabsIndex = 0
 

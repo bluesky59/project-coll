@@ -159,26 +159,44 @@ export default {
     {
       dom: 'chart1',
       optionData: {
-        legend: {},
-        tooltip: {},
-        color: ['#20d3df', '#ff494e'],
-        dataset: {
-          source: [
-            ['product', '计划产量，亿方', '实际产量，亿方'],
-            ['临兴东勘探', 8, 8],
-            ['一体化四期', 7, 7],
-            ['一体化五期', 6, 6],
-            ['第一开发区', 5, 5],
-            ['第二开发区', 4, 4],
-            ['第三开发区', 3, 3],
-          ],
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
         },
-        xAxis: { type: 'category' },
-        yAxis: {},
+        color: ['#26c6e2'],
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: ['浅..', '先..', '第..', '第..', '一..', '临..', '神..'],
+          },
+        ],
+        yAxis: [
+          {
+            type: 'value',
+          },
+        ],
         series: [
           {
+            name: '搜索引擎',
             type: 'bar',
             barWidth: 20,
+            data: [8, 7, 6, 5, 4, 3, 2],
+            markLine: {
+              lineStyle: {
+                type: 'dashed',
+              },
+              data: [
+                [{ type: 'max' }, { type: 'min' }],
+              ],
+            },
             itemStyle: {
               normal: {
                 barBorderRadius: [30, 30, 0, 0],
@@ -188,23 +206,6 @@ export default {
                     { offset: 0, color: '#12f4d8' },
                     { offset: 0.5, color: '#26c5e3' },
                     { offset: 1, color: '#3a94ee' },
-                  ],
-                ),
-              },
-            },
-          },
-          {
-            type: 'bar',
-            barWidth: 20,
-            itemStyle: {
-              normal: {
-                barBorderRadius: [30, 30, 0, 0],
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: '#ff4351' },
-                    { offset: 0.5, color: '#ff4e4b' },
-                    { offset: 1, color: '#ff4e4b' },
                   ],
                 ),
               },

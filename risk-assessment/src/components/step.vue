@@ -1,18 +1,27 @@
 <template>
     <div class="step-container">
-        <div class="step-warp" v-for="(item, index) in stepArr" :key="item">
-            <div class="step-box" :class="{'step-box-active': stepIndex >= index}">{{item}}</div>
-            <div v-if="index < stepArr.length - 1" class="step-circle" :class="{'step-circle-active': stepIndex >= index}">
-                <span class="step-circle-o"></span>
-                <span class="step-circle-o"></span>
-                <span class="step-circle-o"></span>
-            </div>
-        </div>
+        <div class="step-warp" v-html="creatDivider()"></div>
     </div>
 </template>
 
 <script>
 export default {
+    data(){
+        const warp = (label, index) => {
+            return `<div class="step-box" :class="{'step-box-active': ${this.stepIndex} >= ${index}}">${label}</div>`;
+        }
+        const divider = (index) => {
+            return `<div class="step-circle" :class="{'step-circle-active': ${this.stepIndex} >= ${index}}">
+                <span class="step-circle-o"></span>
+                <span class="step-circle-o"></span>
+                <span class="step-circle-o"></span>
+            </div>`;
+        }
+        return {
+            warp,
+            divider
+        }
+    },
     props: {
         stepIndex: {
             type: Number,
@@ -25,13 +34,20 @@ export default {
     },
     methods: {
         creatDivider() {
-            return `<span class="step-circle-o"></span>`;
+            let str = '';
+            this.stepArr.forEach((e, index) => {
+                str += this.warp(e, index);
+                if (index < this.stepArr.length - 1) {
+                    str += this.divider(index);
+                }
+            });
+            return str;
         }
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .step-container {
         width: 100%;
         height: 0.4rem;
@@ -41,6 +57,8 @@ export default {
         margin: 0.6rem auto 0;
         .step-warp {
             display: flex;
+            width: 100%;
+            justify-content: space-between;
             .step-box {
                 width: 1.75rem;
                 height: 0.4rem;

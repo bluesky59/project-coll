@@ -22,7 +22,7 @@
                 <el-button class="linear-btn" type="primary" @click="dialogVisible = true">上传资料</el-button>
             </div>
             <div class="main-step">
-                <stepCom :stepArr="step4" :stepIndex="0" />
+                <stepCom :stepArr="step5" :stepIndex="0" />
             </div>
             <el-dialog
                 title="项目流程细节设计"
@@ -30,7 +30,7 @@
                 :visible.sync="dialogVisible"
                 width="60%">
                 <div class="dialog-container">
-                    <stepCom :stepArr="step4" :stepIndex="0" />
+                    <stepCom :stepArr="step5" :stepIndex="0" />
                     <div class="dialog-box">
                         <div class="dialog-circle-list">
                             <div class="dialog-circle-item" v-for="item in circleArr" :key="item"></div>
@@ -63,14 +63,14 @@
 
 <script>
 import stepCom from '@/components/step.vue'
-import { step4 } from '@/data/step.js';
+import { step5 } from '@/data/step.js';
 export default {
     components: {
         stepCom
     },
     data() {
         return {
-            step4,
+            step5,
             form: {},
             dialogVisible: false,
             dialogContentArr: [

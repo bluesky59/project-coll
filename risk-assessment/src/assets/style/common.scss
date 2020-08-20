@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'myFont'; 
+    src: url('../fonts/PingFang Regular.ttf'); 
+    font-weight: normal;
+    font-style: normal;
+  }
+
+html,body { font-family: myFont, sans-serif; }
+
 html, body, ul, li, p, h4 {
     margin: 0;
     padding: 0;

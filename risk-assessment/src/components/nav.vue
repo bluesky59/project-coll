@@ -64,7 +64,7 @@ export default {
                 width: 2.3rem;
                 height: 0.42rem;
                 display: block;
-                margin-right: 2.2rem;
+                margin-right: 1.2rem;
             }
             .nav-notice {
                 width: 0.2rem;
@@ -72,20 +72,20 @@ export default {
                 display: block;
             }
             .nav-list {
-                width: 7.4rem;
                 height: 1rem;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 cursor: pointer;
                 .nav-item {
-                    width: auto;
+                    min-width: 0.96rem;
                     height: 100%;
                     line-height: 1rem;
                     font-size: 0.18rem;
                     font-weight: 400;
-                    padding: 0 0.1rem;
+                    padding: 0 0.05rem;
                     list-style: none;
+                    text-align: center;
                 }
                 .nav-item-sel {
                     color: #fff;

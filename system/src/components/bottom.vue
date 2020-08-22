@@ -142,12 +142,12 @@ export default class Bottom extends Vue {
     width: 100%;
     height: auto;
     .echarts-box {
-      width: 6.65rem;
+      width: 100%;
       height: 1.8rem;
       display: flex;
       justify-content: space-between;
       .echarts-des {
-        width: 1rem;
+        width: 100px;
         height: 1.8rem;
         .echarts-article {
           padding: 0.12rem 0 0 0.12rem;
@@ -172,7 +172,7 @@ export default class Bottom extends Vue {
         }
       }
       .echarts-chart {
-        width: 5.6rem;
+        width: 560px;
         height: 1.8rem;
       }
     }

@@ -7,11 +7,18 @@
       <div class="main-echarts" v-show="showEcharts">
         <div class="main-echarts-top">
           <div class="main-echarts-left">
-            <section class="echarts-box">
+            <section class="echarts-box echarts-circle">
               <div class="echarts-title">
                 <p class="echarts-title-txt">临兴区块产能完成情况</p>
                 <div class="echarts-title-divider"></div>
               </div>
+              <el-date-picker
+                class="date-picker"
+                v-model="value"
+                type="month"
+                size="mini"
+                placeholder="选择月">
+              </el-date-picker>
               <div class="echarts-container circle-container">
                 <div class="circle-box circle-box-1">
                   <div class="circle-pic">
@@ -86,6 +93,8 @@ import headerCom from './header.vue';
 export default class MainCom extends Vue {
   showEcharts = true
 
+  value = new Date()
+
   mounted() {
     data.left.forEach((el) => {
       this.initEcharts(el.dom, el.optionData);
@@ -122,11 +131,12 @@ export default class MainCom extends Vue {
     justify-content: space-between;
     align-items: center;
     .main-map {
-      width: 6.65rem;
+      flex: 1;
       height: 100%;
       border-radius: 6px;
       background-size: cover;
       position: relative;
+      margin-right: 15px;
       .map-table {
         width: 2.26rem;
         height: 1.34rem;
@@ -137,7 +147,7 @@ export default class MainCom extends Vue {
       }
     }
     .main-echarts {
-      width: 6.65rem;
+      width: 660px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -147,7 +157,7 @@ export default class MainCom extends Vue {
         display: flex;
         justify-content: space-between;
         .main-echarts-left, .main-echarts-right {
-          width: 3.27rem;
+          width: 49%;
           height: 100%;
           background-color: #fff;
           border-radius: 5px;
@@ -173,6 +183,10 @@ export default class MainCom extends Vue {
               bottom: 0;
               left: 0.2rem;
             }
+          }
+          .date-picker {
+            margin: 10px 0 0 20px;
+            width: 160px;
           }
           .echarts-container {
             width: 100%;
@@ -229,6 +243,11 @@ export default class MainCom extends Vue {
             }
           }
         }
+        .echarts-circle {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
       }
       .main-echarts-bottom {
         height: 1.9rem;
@@ -237,7 +256,7 @@ export default class MainCom extends Vue {
       }
     }
     .main-info {
-      width: 6.65rem;
+      width: 660px;
       height: 100%;
       border-radius: 6px;
       background-color: #fff;

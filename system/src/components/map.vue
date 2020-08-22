@@ -1,5 +1,6 @@
 <template>
-  <div class="map-container" id="container">
+  <div class="map-container">
+    <div class="map-map" id="container"></div>
     <div class="map-input-container">
       <input class="map-input" type="text" placeholder="查找业务对象名称" />
       <img class="map-input-bottom" src="../assets/imgs/bottom.png" />
@@ -17,23 +18,25 @@
       </div>
     </div>
     <img class="map-mini" src="../assets/imgs/map-mini.png" />
-    <div class="map-table">
-      <div class="map-table-header">
-        <p>LX-151已开发井</p>
-        <p class="map-table-detail" @click="infoTriggerHandle">详细信息></p>
-      </div>
-      <div class="map-table-body" v-for="item in tableContent" :key="item.id">
-        <div class="map-t-col map-t-col-label">{{item.label1}}</div>
-        <div class="map-t-col">{{item.value1}}</div>
-        <div class="map-t-col map-t-col-label">{{item.label2}}</div>
-        <div class="map-t-col">{{item.value2}}</div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+
+declare let AMap: any;
+const tHeader = () => {
+  return `<div class="map-table-header">
+        <p>LX-151已开发井</p>
+        <p class="map-table-detail">详细信息></p>
+      </div>`;
+};
+const tRow = (item: any) => {
+  return `<div class="map-table-body" :key="${item.id}"><div class="map-t-col map-t-col-label">${item.label1}</div>
+        <div class="map-t-col">${item.value1}</div>
+        <div class="map-t-col map-t-col-label">${item.label2}</div>
+        <div class="map-t-col">${item.value2}</div></div>`;
+};
 
 @Component({})
 
@@ -64,15 +67,50 @@ export default class MapCom extends Vue {
     },
   ]
 
-  infoTriggerHandle() {
+  private map: any = {}
+
+  private infoWindow: any = {}
+
+  mounted() {
+    this.initMap();
+  }
+
+  public infoTriggerHandle() {
     this.$emit('infoTriggerHandle');
+  }
+
+  initMap() {
+    this.map = new AMap.Map('container', {
+      resizeEnable: true,
+      center: [116.473188, 39.993253],
+      zoom: 13,
+    });
+    const info: any = [];
+    let str: string = '';
+    this.tableContent.forEach((item) => {
+      return str += tRow(item);
+    });
+    info.push(`<div class="map-table">${tHeader()}${str}</div>`);
+    this.map.on('click', (e: any) => {
+      this.map.remove(this.infoWindow);
+      this.infoWindow = new AMap.InfoWindow({
+        content: info,
+        position: e.lnglat,
+      });
+      this.map.add(this.infoWindow);
+      this.$nextTick(() => {
+        const dom: any = document.querySelector('.map-table-detail') || window;
+        dom.onclick = () => {
+          this.infoTriggerHandle();
+        };
+      });
+    });
   }
 }
 </script>
 
 <style lang="scss">
 .map-container {
-  background: url("../assets/imgs/map.png") no-repeat center;
   background-size: cover;
   position: relative;
   .map-mini {
@@ -163,15 +201,10 @@ export default class MapCom extends Vue {
   .map-table {
     width: 2.25rem;
     height: 1.32rem;
-    background: url("../assets/imgs/map-t.png") no-repeat center;
-    background-size: cover;
-    position: absolute;
-    right: 0.3rem;
-    top: 2rem;
     .map-table-header {
       width: 1.97rem;
       height: 0.26rem;
-      margin-left: 0.08rem;
+      margin: 0.2rem 0 0 0.08rem;
       background-image: linear-gradient(to right, #2486ff, #00c0ff);
       display: flex;
       justify-content: space-between;
@@ -188,9 +221,12 @@ export default class MapCom extends Vue {
       height: 0.35rem;
       margin-left: 0.08rem;
       border-bottom: 1px solid #e5ecf0;
+      border-left: 1px solid #e5ecf0;
+      border-right: 1px solid #e5ecf0;
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      background-color: #fff;
       .map-t-col {
         width: 25%;
         height: 0.35rem;
@@ -207,9 +243,23 @@ export default class MapCom extends Vue {
         border-right: none;
       }
     }
-    .map-table-body:last-of-type {
-      border-bottom: none;
+    .map-table-triangle {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-right: 10px solid #fff;
+      border-bottom: 8px solid transparent;
+      position: absolute;
+      left: 1px;
+      top: 0.26rem;
     }
+  }
+  .map-map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   .amap-copyright {
     display: none !important;

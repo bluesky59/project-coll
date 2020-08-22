@@ -9,13 +9,13 @@
       <img class="header-exit" src="../assets/imgs/exit.png" />
     </div>
     <div class="header-nav header-nav-l">
-      <div class="header-nav-box" :class="{'header-nav-box-active': item.index === navIndex}" v-for="item in navArrsL" :key="item.label">
+      <div @click="navSwitchHandle(item.index)" class="header-nav-box" :class="{'header-nav-box-active': item.index === navIndex}" v-for="item in navArrsL" :key="item.label">
         <img class="header-nav-icon" :src="require(`../assets/imgs/${item.icon}.png`)" />
         <p>{{item.label}}</p>
       </div>
     </div>
     <div class="header-nav header-nav-r">
-      <div class="header-nav-box" v-for="item in navArrsR" :key="item.label">
+      <div @click="navSwitchHandle(item.index)" class="header-nav-box" :class="{'header-nav-box-active': item.index === navIndex}" v-for="item in navArrsR" :key="item.label">
         <img class="header-nav-icon" :src="require(`../assets/imgs/${item.icon}.png`)" />
         <p>{{item.label}}</p>
       </div>
@@ -36,21 +36,25 @@ export default class HeaderCom extends Vue {
       label: '首页',
       icon: 'nav-icon-0',
       index: 0,
+      routes: '',
     },
     {
       label: '产能建设',
       icon: 'nav-icon-1',
       index: 1,
+      routes: '',
     },
     {
       label: '产能跟踪',
       icon: 'nav-icon-2',
       index: 2,
+      routes: '',
     },
     {
       label: '钻井跟踪',
       icon: 'nav-icon-3',
       index: 3,
+      routes: '',
     },
   ];
 
@@ -59,23 +63,31 @@ export default class HeaderCom extends Vue {
       label: '压裂跟踪',
       icon: 'nav-icon-4',
       index: 4,
+      routes: '',
     },
     {
       label: '地面工程',
       icon: 'nav-icon-5',
       index: 5,
+      routes: '',
     },
     {
       label: '生产图件',
       icon: 'nav-icon-6',
       index: 6,
+      routes: '',
     },
     {
       label: '基础数据',
       icon: 'nav-icon-7',
       index: 7,
+      routes: '',
     },
   ]
+
+  navSwitchHandle(index: number) {
+    this.navIndex = index;
+  }
 }
 </script>
 
@@ -140,6 +152,7 @@ export default class HeaderCom extends Vue {
       align-items: center;
       font-size: 13px;
       color: #0f456d;
+      cursor: pointer;
       .header-nav-icon {
         margin-right: 5px;
       }

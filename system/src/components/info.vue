@@ -94,12 +94,12 @@
           <div class="info-table-row-des">
             <div class="info-table-row-box">有限PSC</div>
             <div class="info-table-row-box info-table-row-label">作业者</div>
-            <div class="info-table-row-box" style="font-size: 13px">
+            <div class="info-table-row-box" style="font-size: 12px">
               <p>中联煤层气有限</p>
               <p>责任公司</p>
             </div>
             <div class="info-table-row-box info-table-row-label">钻井单位</div>
-            <div class="info-table-row-box">
+            <div class="info-table-row-box" style="font-size: 12px">
               <p>河南豫中地质</p>
               <p>勘察工程公司</p>
             </div>
@@ -209,7 +209,7 @@ export default class Bottom extends Vue {
 <style scoped lang="scss">
 .info-container {
   .info-title {
-    width: 3.6rem;
+    width: 360px;
     height: 0.36rem;
     border-radius: 0.18rem;
     border: 1px solid #298efe;
@@ -217,7 +217,7 @@ export default class Bottom extends Vue {
     overflow: hidden;
     display: flex;
     .info-label {
-      width: 1.2rem;
+      width: 120px;
       font-size: 14px;
       font-weight: 400;
       line-height: 0.36rem;
@@ -250,7 +250,7 @@ export default class Bottom extends Vue {
           background-color: #298efe;
         }
         .info-table-row-title {
-          width: 1rem;
+          width: 100px;
           text-align: center;
           border-right: 1px solid #fff;
           box-sizing: border-box;
@@ -307,14 +307,14 @@ export default class Bottom extends Vue {
           font-weight: bold;
           color: #333;
           .date-picker {
-            width: 2.4rem;
+            width: 240px;
             margin-right: 4px;
           }
         }
       }
       .info-chart-box {
         height: 1.5rem;
-        width: 6.65rem;
+        width: 660px;
       }
     }
     .info-report {
@@ -350,7 +350,7 @@ export default class Bottom extends Vue {
           color: #333;
           text-align: center;
           .table-body-btn {
-            width: 0.6rem;
+            width: 60px;
             height: 0.3rem;
             border-radius: 5px;
             background-color: #f9a31a;

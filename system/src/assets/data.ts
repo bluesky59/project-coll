@@ -1,66 +1,94 @@
 import echarts from 'echarts';
 
-const data = [{
-  name: 'Apples',
-  value: 70,
-}, {
-  name: 'Strawberries',
-  value: 68,
-}, {
-  name: 'Bananas',
-  value: 48,
-}, {
-  name: 'Oranges',
-  value: 40,
-}, {
-  name: 'Pears',
-  value: 32,
-}, {
-  name: 'Pineapples',
-  value: 27,
-}, {
-  name: 'Grapes',
-  value: 18,
-}];
-
 export default {
   left: [
     {
       dom: 'chart2',
       optionData: {
-        legend: {
-          orient: 'vertical',
-          right: 20,
-          top: 40,
-          data: ['新建产能 9.16', '老井产能 9.3'],
-        },
-        color: ['#1caafc', '#f9a31a'],
+        calculable: true,
         series: [
+
           {
+            name: '面积模式',
             type: 'pie',
-            radius: ['50%', '70%'],
-            center: ['30%', '50%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: true,
-              position: 'inner',
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: '30',
-                fontWeight: 'bold',
+            radius: [40, 60],
+            center: ['50%', '50%'],
+            data: [{
+              value: 9.3,
+              itemStyle: {
+
+                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  offset: 0,
+                  color: '#f5a70d'
+                }, {
+                  offset: 1,
+                  color: '#ff7f00'
+                }])
               },
+              label: {
+                color: "#333",
+                fontSize: 12,
+                formatter: '新建产能\n{a|9.3}',
+                rich: {
+                  a: {
+                    color: "#ff8600",
+                    fontSize: 12,
+                    lineHeight: 16,
+                    fontWeight: 600
+                  },
+                }
+              }
             },
-            labelLine: {
-              show: false,
-            },
-            data: [
-              { value: 9.16, name: '新建产能 9.16' },
-              { value: 9.3, name: '老井产能 9.3' },
-            ],
+              {
+                value: 52,
+                name: 'rose2',
+                itemStyle: {
+                  color: "transparent"
+                }
+              }
+            ]
           },
-        ],
+          {
+            name: '面积模式',
+            type: 'pie',
+            radius: [45, 55],
+            center: ['50%', '50%'],
+            data: [{
+              value: 9.16,
+              itemStyle: {
+                color: "transparent"
+              }
+            },
+              {
+                value: 52,
+                name: 'rose2',
+                itemStyle: {
+
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: '#3ebafa'
+                  }, {
+                    offset: 1,
+                    color: '#32a0fd'
+                  }])
+                },
+                label: {
+                  color: "#333",
+                  fontSize: 12,
+                  formatter: '老井产能\n{a|9.16}',
+                  rich: {
+                    a: {
+                      color: "#298efe",
+                      fontSize: 12,
+                      lineHeight: 16,
+                      fontWeight: 600
+                    },
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
     },
     {

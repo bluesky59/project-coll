@@ -1,0 +1,78 @@
+{
+  "chart1": {
+    "xAxis": ["临兴东勘探", "一体化四期", "一体化五期", "第一开发区", "第二开发区", "第三开发区"],
+    "yAxis": [
+      {
+        "color": "#26c5e3",
+        "startColor": "#12f4d8",
+        "endColor": "#3a94ee",
+        "label": "计划产量，亿方",
+        "data": [ 1, 2, 3, 3, 5, 7]
+      },
+      {
+        "color": "#ff4e4b",
+        "startColor": "#ff4351",
+        "endColor": "#ff4e4b",
+        "label": "实际产量，亿方",
+        "data": [5, 7, 8, 6, 5, 2]
+      }
+    ]
+  },
+  "chart2": {
+    "xAxis": ["临兴东勘探", "一体化四期", "一体化五期", "第一开发区", "第二开发区", "第三开发区"],
+    "yAxis": [
+      {
+        "color": "#26c5e3",
+        "startColor": "#12f4d8",
+        "endColor": "#3a94ee",
+        "label": "年初计划",
+        "data": [ 1, 2, 3, 3, 5, 7]
+      },
+      {
+        "color": "#ff4e4b",
+        "startColor": "#ff4351",
+        "endColor": "#ff4e4b",
+        "label": "累计完钻",
+        "data": [5, 7, 8, 6, 5, 2]
+      }
+    ]
+  },
+  "chart3": {
+    "xAxis": ["临兴东勘探", "一体化四期", "一体化五期", "第一开发区", "第二开发区", "第三开发区"],
+    "yAxis": [
+      {
+        "color": "#fcac20",
+        "startColor": "#fac832",
+        "endColor": "#ff8f0d",
+        "label": "年初计划",
+        "data": [ 1, 2, 3, 3, 5, 7]
+      },
+      {
+        "color": "#0fc2a4",
+        "startColor": "#1ecc88",
+        "endColor": "#01b9be",
+        "label": "累计完钻",
+        "data": [5, 7, 8, 6, 5, 2]
+      }
+    ]
+  },
+  "chart4": {
+    "xAxis": ["临兴东勘探", "一体化四期", "一体化五期", "第一开发区", "第二开发区", "第三开发区"],
+    "yAxis": [
+      {
+        "color": "#0094ff",
+        "startColor": "#00adff",
+        "endColor": "#0078fe",
+        "label": "年初计划",
+        "data": [ 1, 2, 3, 3, 5, 7]
+      },
+      {
+        "color": "#7c4df0",
+        "startColor": "#9632ed",
+        "endColor": "#5b6ff3",
+        "label": "累计完钻",
+        "data": [5, 7, 8, 6, 5, 2]
+      }
+    ]
+  }
+}

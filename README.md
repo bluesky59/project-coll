@@ -9,3 +9,5 @@
 ##  2020/08/11 system 中联汽油田跟踪系统（pc图表大屏、vue-cli4 + ts + echarts）
 
 ##  2020/08/24 system 中联汽油田跟踪系统（pc图表大屏、vue-cli4 + js + echarts）
+
+##  2020/11/03 equipment 设备管理 (钉钉h5 vue-cli3 + ts + vant)

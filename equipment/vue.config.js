@@ -4,8 +4,7 @@ module.exports = {
       postcss: {
         plugins: [
           require('postcss-plugin-px2rem')({
-            rootValue: 75,
-            exclude: /(node_module)/,
+            rootValue: 37.5,
             mediaQuery: false,
             minPixelValue: 3
           })

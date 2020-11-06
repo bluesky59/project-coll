@@ -1,4 +1,18 @@
-html, body, div, p {
+
+$bgColor: #ebebeb;
+
+html, body, div, p, h6 {
     margin: 0;
     padding: 0;
+}
+
+.page-bg-color {
+    background-color: $bgColor;
+}
+.page-title {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #222;
+    text-align: center;
 }
